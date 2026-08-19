@@ -1,0 +1,19 @@
+{
+  "name": "matcast",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node build.mjs && node server.mjs --dev",
+    "build": "NODE_ENV=production node build.mjs",
+    "start": "npm run build && NODE_ENV=production node server.mjs",
+    "check": "node --check server.mjs && NODE_ENV=production node build.mjs"
+  },
+  "dependencies": {
+    "hls.js": "^1.6.11",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12"
+  }
+}
