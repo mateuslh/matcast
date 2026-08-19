@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#0A0B0D;color:#F5F6F2;font-family:Archivo,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#C8F542;text-decoration:none}a:hover{color:#FFFFFF}
+::selection{background:#C8F542;color:#0A0B0D}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:920px){
+#nav-links{display:none !important}
+#hero-stats{display:none !important}
+#live-grid{grid-template-columns:1fr !important}
+#cam-rail{flex-direction:row !important;flex-wrap:wrap !important}
+#cam-rail>div{flex:1 1 42% !important;min-height:88px !important}
+#cortes-grid{grid-template-columns:1fr !important;gap:36px !important}
+#sobre-grid{grid-template-columns:1fr !important;gap:36px !important}
+#hrows>div{grid-template-columns:1fr !important;gap:10px !important}
+#foot-main{flex-direction:column !important;align-items:flex-start !important}
+#foot-meta{flex-direction:column !important;gap:10px !important;align-items:flex-start !important}
+}
+</style>
+</helmet>
+
+<div data-screen-label="Ceconi Live" style="min-width:0">
+
+<nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:clamp(14px,3vw,32px);padding:0 clamp(14px,4vw,40px);height:64px;background:rgba(10,11,13,.78);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)">
+  <a href="#topo" style="display:flex;align-items:center"><img src="https://ceconibjjcriciuma.com.br/wp-content/uploads/2025/04/CeconiBJJ-branco.png" alt="Ceconi BJJ" style="height:30px;display:block"></a>
+  <div id="nav-links" style="display:flex;gap:26px;font-size:13.5px;font-weight:600;letter-spacing:.04em">
+    <a href="#aovivo" style="color:#F5F6F2" style-hover="color:#C8F542">AO VIVO</a>
+    <a href="#replays" style="color:rgba(245,246,242,.6)" style-hover="color:#C8F542">REPLAYS</a>
+    <a href="#cortes" style="color:rgba(245,246,242,.6)" style-hover="color:#C8F542">CORTES</a>
+    <a href="#horarios" style="color:rgba(245,246,242,.6)" style-hover="color:#C8F542">HORÁRIOS</a>
+  </div>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:14px">
+    <div style="display:flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid rgba(255,255,255,.14);border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em">
+      <span style="width:7px;height:7px;border-radius:50%;background:{{ liveDot }};animation:pulse 1.6s infinite"></span>
+      <span>{{ liveBadge }}</span>
+    </div>
+    <a href="#aovivo" style="background:#C8F542;color:#0A0B0D;font-weight:700;font-size:13px;letter-spacing:.04em;padding:10px 18px;border-radius:6px" style-hover="background:#FFFFFF;color:#0A0B0D">ÁREA DO ALUNO</a>
+  </div>
+</nav>
+
+<header id="topo" data-screen-label="Hero" style="position:relative;height:88vh;min-height:640px;overflow:hidden;display:flex;align-items:flex-end">
+  <video src="uploads/assets-1787096787846-ylk1.mp4" autoPlay muted loop playsInline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,11,13,.55) 0%,rgba(10,11,13,.15) 40%,rgba(10,11,13,.92) 88%,#0A0B0D 100%)"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 20% 80%,transparent 40%,rgba(10,11,13,.55) 100%)"></div>
+  <div style="position:relative;padding:0 clamp(20px,5vw,64px) clamp(40px,6vw,72px);max-width:1000px">
+    <div style="display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid rgba(255,59,48,.5);background:rgba(10,11,13,.6);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;margin-bottom:26px">
+      <span style="width:8px;height:8px;border-radius:50%;background:{{ liveDot }};animation:pulse 1.6s infinite"></span>
+      <span>{{ heroBadge }}</span>
+      <span style="color:rgba(245,246,242,.5)">·</span>
+      <span style="color:#C8F542">{{ timecode }}</span>
+    </div>
+    <h1 style="font-family:Anton,sans-serif;font-weight:400;font-size:clamp(46px,10vw,104px);line-height:.94;letter-spacing:.005em;margin:0;text-transform:uppercase">O tatame<br>nunca <span style="color:#C8F542">fecha.</span></h1>
+    <p style="font-size:18px;line-height:1.6;color:rgba(245,246,242,.78);max-width:560px;margin:26px 0 34px;text-wrap:pretty">Câmeras ao vivo nos dois tatames da Ceconi BJJ. Assista aos treinos em tempo real, reveja cada aula gravada e corte seus melhores momentos. Tudo incluso na sua mensalidade.</p>
+    <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+      <a href="#aovivo" style="display:inline-flex;align-items:center;gap:10px;background:#C8F542;color:#0A0B0D;font-weight:700;font-size:15px;letter-spacing:.03em;padding:16px 28px;border-radius:6px" style-hover="background:#FFFFFF;color:#0A0B0D"><span style="font-size:11px">▶</span> ASSISTIR AO VIVO</a>
+      <a href="#replays" style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.25);color:#F5F6F2;font-weight:600;font-size:15px;letter-spacing:.03em;padding:15px 28px;border-radius:6px;background:rgba(10,11,13,.4)" style-hover="border:1px solid #C8F542;color:#C8F542;background:rgba(10,11,13,.4)">VER REPLAYS</a>
+    </div>
+  </div>
+  <div id="hero-stats" style="position:absolute;right:64px;bottom:72px;display:grid;gap:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-align:right;color:rgba(245,246,242,.75)">
+    <div style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.14)"><span style="color:#C8F542;font-weight:600">02</span> TATAMES PROFISSIONAIS</div>
+    <div style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.14)"><span style="color:#C8F542;font-weight:600">04</span> CÂMERAS AO VIVO</div>
+    <div style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.14)"><span style="color:#C8F542;font-weight:600">24/7</span> GRAVANDO</div>
+    <div style="padding:10px 0"><span style="color:#C8F542;font-weight:600">R$0</span> INCLUSO NO PLANO</div>
+  </div>
+</header>
+
+<div style="background:#C8F542;overflow:hidden;padding:12px 0;border-top:1px solid #0A0B0D">
+  <div style="display:flex;width:max-content;animation:marquee 22s linear infinite;font-family:Anton,sans-serif;font-size:17px;letter-spacing:.12em;color:#0A0B0D;white-space:nowrap">
+    <span style="padding-right:48px">BE A LION ✦ AO VIVO 24/7 ✦ DOIS TATAMES ✦ QUATRO CÂMERAS ✦ REPLAYS DE TODAS AS AULAS ✦ CORTES EM SEGUNDOS ✦</span>
+    <span style="padding-right:48px">BE A LION ✦ AO VIVO 24/7 ✦ DOIS TATAMES ✦ QUATRO CÂMERAS ✦ REPLAYS DE TODAS AS AULAS ✦ CORTES EM SEGUNDOS ✦</span>
+  </div>
+</div>
+
+<section id="aovivo" data-screen-label="Ao Vivo" style="padding:clamp(56px,8vw,96px) clamp(20px,5vw,64px) clamp(48px,7vw,90px);max-width:1440px;margin:0 auto;box-sizing:border-box">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:#C8F542;margin-bottom:12px">01 / TRANSMISSÃO</div>
+      <h2 style="font-family:Anton,sans-serif;font-weight:400;font-size:clamp(32px,6vw,56px);line-height:1;margin:0;text-transform:uppercase">Ao vivo <span style="color:rgba(245,246,242,.35)">do tatame</span></h2>
+    </div>
+    <sc-if value="{{ aoVivo }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:rgba(245,246,242,.7)">
+        <span style="width:8px;height:8px;border-radius:50%;background:#FF3B30;animation:pulse 1.6s infinite"></span>
+        {{ viewersLabel }}
+      </div>
+    </sc-if>
+  </div>
+
+  <div id="live-grid" style="display:grid;grid-template-columns:1fr 300px;gap:18px;align-items:stretch">
+    <div style="position:relative;border-radius:10px;overflow:hidden;background:#000;border:1px solid rgba(255,255,255,.1);aspect-ratio:16/9">
+      <video ref="{{ mainRef }}" src="{{ activeSrc }}" autoPlay muted loop playsInline onClick="{{ togglePlay }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:pointer"></video>
+      <div style="position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:16px 18px;background:linear-gradient(to bottom,rgba(0,0,0,.55),transparent);pointer-events:none">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;background:rgba(10,11,13,.65);border:1px solid rgba(255,255,255,.15);padding:6px 10px;border-radius:4px">{{ activeLabel }}</div>
+        <div style="display:flex;gap:8px">
+          <div style="display:flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;background:{{ liveTagBg }};color:{{ liveTagColor }};padding:6px 10px;border-radius:4px;font-weight:600"><span style="width:6px;height:6px;border-radius:50%;background:currentColor;animation:pulse 1.6s infinite"></span>{{ liveBadge }}</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;background:rgba(10,11,13,.65);border:1px solid rgba(255,255,255,.15);padding:6px 10px;border-radius:4px;color:#C8F542">{{ timecode }}</div>
+        </div>
+      </div>
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:14px 18px;background:linear-gradient(to top,rgba(0,0,0,.65),transparent)">
+        <div style="height:3px;background:rgba(255,255,255,.25);border-radius:2px;margin-bottom:12px;position:relative">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:96%;background:#FF3B30;border-radius:2px"></div>
+          <div style="position:absolute;right:4%;top:-4px;width:11px;height:11px;border-radius:50%;background:#FFFFFF;box-shadow:0 0 0 3px rgba(255,59,48,.4)"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em">
+          <button onClick="{{ togglePlay }}" style="background:none;border:1px solid rgba(255,255,255,.3);color:#F5F6F2;font-family:inherit;font-size:11px;letter-spacing:.1em;padding:6px 12px;border-radius:4px;cursor:pointer" style-hover="border:1px solid #C8F542;color:#C8F542;background:none">{{ playLabel }}</button>
+          <button onClick="{{ toggleMute }}" style="background:none;border:1px solid rgba(255,255,255,.3);color:#F5F6F2;font-family:inherit;font-size:11px;letter-spacing:.1em;padding:6px 12px;border-radius:4px;cursor:pointer" style-hover="border:1px solid #C8F542;color:#C8F542;background:none">{{ muteLabel }}</button>
+          <span style="color:rgba(245,246,242,.55)">{{ liveEdgeLabel }}</span>
+          <span style="margin-left:auto;color:rgba(245,246,242,.55)">1080p · 60fps</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="cam-rail" style="display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ cams }}" as="cam" hint-placeholder-count="4">
+        <div onClick="{{ cam.onClick }}" style="position:relative;border-radius:8px;overflow:hidden;border:1.5px solid {{ cam.bc }};background:#101216;cursor:{{ cam.cursor }};flex:1;min-height:104px;opacity:{{ cam.op }}">
+          <sc-if value="{{ cam.live }}" hint-placeholder-val="{{ true }}">
+            <video src="{{ cam.src }}" autoPlay muted loop playsInline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+          </sc-if>
+          <sc-if value="{{ cam.offline }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;inset:0;background:repeating-linear-gradient(-45deg,#101216 0 10px,#14171C 10px 20px)"></div>
+          </sc-if>
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6),transparent 55%)"></div>
+          <div style="position:absolute;left:10px;bottom:9px;right:10px;display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em">
+            <span>{{ cam.label }}</span>
+            <span style="color:{{ cam.tagColor }};font-weight:600">{{ cam.tag }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  <p style="margin:20px 0 0;font-size:14.5px;color:rgba(245,246,242,.55)">Quatro câmeras, dois tatames. Troque de ângulo em um clique — a transmissão liga automaticamente no horário de cada aula.</p>
+</section>
+
+<section id="replays" data-screen-label="Replays" style="padding:clamp(52px,8vw,90px) clamp(20px,5vw,64px);background:#0E1013;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)">
+  <div style="max-width:1312px;margin:0 auto">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:#C8F542;margin-bottom:12px">02 / BIBLIOTECA</div>
+        <h2 style="font-family:Anton,sans-serif;font-weight:400;font-size:clamp(32px,6vw,56px);line-height:1;margin:0;text-transform:uppercase">Replays <span style="color:rgba(245,246,242,.35)">de cada aula</span></h2>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:rgba(245,246,242,.5);letter-spacing:.08em">GRAVAÇÕES DOS ÚLTIMOS 30 DIAS</div>
+    </div>
+    <div style="display:flex;gap:10px;margin-bottom:26px;flex-wrap:wrap">
+      <sc-for list="{{ chips }}" as="chip" hint-placeholder-count="6">
+        <button onClick="{{ chip.onClick }}" style="background:{{ chip.bg }};color:{{ chip.color }};border:1px solid {{ chip.border }};font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;padding:8px 16px;border-radius:999px;cursor:pointer" style-hover="border:1px solid #C8F542;background:{{ chip.bg }};color:{{ chip.hoverColor }}">{{ chip.name }}</button>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:18px">
+      <sc-for list="{{ replays }}" as="rep" hint-placeholder-count="6">
+        <div style="border:1px solid rgba(255,255,255,.09);border-radius:10px;overflow:hidden;background:#121418;cursor:pointer;transition:transform .18s ease,border-color .18s ease" style-hover="border:1px solid rgba(200,245,66,.55);transform:translateY(-3px)">
+          <div style="position:relative;aspect-ratio:16/9;background:#000">
+            <video src="{{ rep.src }}" preload="metadata" muted playsInline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.5),transparent 45%)"></div>
+            <div style="position:absolute;top:10px;left:10px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;background:rgba(10,11,13,.7);border:1px solid rgba(255,255,255,.14);padding:4px 8px;border-radius:4px">{{ rep.cam }}</div>
+            <div style="position:absolute;bottom:10px;right:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;background:rgba(10,11,13,.8);padding:4px 8px;border-radius:4px;color:#C8F542">{{ rep.dur }}</div>
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+              <div style="width:52px;height:52px;border-radius:50%;background:rgba(200,245,66,.92);color:#0A0B0D;display:flex;align-items:center;justify-content:center;font-size:15px;padding-left:4px">▶</div>
+            </div>
+          </div>
+          <div style="padding:16px 18px">
+            <div style="font-weight:600;font-size:15.5px;margin-bottom:6px">{{ rep.title }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:rgba(245,246,242,.5);letter-spacing:.05em">{{ rep.meta }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="cortes" data-screen-label="Cortes" style="padding:clamp(56px,8vw,96px) clamp(20px,5vw,64px);max-width:1440px;margin:0 auto;box-sizing:border-box">
+  <div id="cortes-grid" style="display:grid;grid-template-columns:380px 1fr;gap:64px;align-items:center">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:#C8F542;margin-bottom:12px">03 / CORTES</div>
+      <h2 style="font-family:Anton,sans-serif;font-weight:400;font-size:clamp(32px,6vw,56px);line-height:1.02;margin:0 0 22px;text-transform:uppercase">Pegou a finalização? <span style="color:rgba(245,246,242,.35)">Corta.</span></h2>
+      <p style="font-size:16px;line-height:1.65;color:rgba(245,246,242,.7);margin:0 0 28px;text-wrap:pretty">Marque o início, marque o fim. O corte sai em segundos, pronto para o seu celular e para o Instagram — direto do replay da aula.</p>
+      <div style="display:grid;gap:14px;font-size:14.5px">
+        <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;color:#C8F542;font-size:12px">01</span> Abra o replay e ache o momento</div>
+        <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;color:#C8F542;font-size:12px">02</span> Arraste as alças de início e fim</div>
+        <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;color:#C8F542;font-size:12px">03</span> Baixe ou compartilhe o corte</div>
+      </div>
+    </div>
+    <div style="border:1px solid rgba(255,255,255,.1);border-radius:12px;background:#101216;padding:18px;box-shadow:0 30px 80px rgba(0,0,0,.5)">
+      <div style="position:relative;border-radius:8px;overflow:hidden;aspect-ratio:16/8;background:#000">
+        <video src="uploads/assets-1787096787759-3cre.mp4#t=4" preload="metadata" muted playsInline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+        <div style="position:absolute;top:12px;left:12px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;background:rgba(10,11,13,.75);border:1px solid rgba(200,245,66,.5);color:#C8F542;padding:5px 10px;border-radius:4px">CORTE · 00:28</div>
+        <div style="position:absolute;bottom:12px;left:12px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(245,246,242,.85);background:rgba(10,11,13,.75);padding:5px 10px;border-radius:4px">Avançado · Qui 19h30 · TATAME 1</div>
+      </div>
+      <div style="margin-top:16px;position:relative;height:64px;border-radius:6px;overflow:hidden;background:repeating-linear-gradient(90deg,#171A1F 0 46px,#1D2127 46px 47px)">
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,11,13,.75) 0 34%,transparent 34%,transparent 62%,rgba(10,11,13,.75) 62%)"></div>
+        <div style="position:absolute;top:0;bottom:0;left:34%;width:28%;border:2px solid #C8F542;border-radius:4px;box-sizing:border-box;background:rgba(200,245,66,.08)"></div>
+        <div style="position:absolute;top:50%;left:34%;transform:translate(-50%,-50%);width:14px;height:34px;border-radius:4px;background:#C8F542;box-shadow:0 2px 8px rgba(0,0,0,.6)"></div>
+        <div style="position:absolute;top:50%;left:62%;transform:translate(-50%,-50%);width:14px;height:34px;border-radius:4px;background:#C8F542;box-shadow:0 2px 8px rgba(0,0,0,.6)"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(245,246,242,.5);letter-spacing:.06em">
+        <span>00:00</span><span style="color:#C8F542">IN 21:14</span><span style="color:#C8F542">OUT 21:42</span><span>58:12</span>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:16px">
+        <button style="flex:1;background:#C8F542;border:none;color:#0A0B0D;font-family:Archivo,sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;padding:13px;border-radius:6px;cursor:pointer" style-hover="background:#FFFFFF;color:#0A0B0D">CRIAR CORTE</button>
+        <button style="flex:1;background:none;border:1px solid rgba(255,255,255,.22);color:#F5F6F2;font-family:Archivo,sans-serif;font-weight:600;font-size:14px;letter-spacing:.04em;padding:13px;border-radius:6px;cursor:pointer" style-hover="border:1px solid #C8F542;color:#C8F542;background:none">COMPARTILHAR</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="horarios" data-screen-label="Horários" style="padding:clamp(52px,8vw,90px) clamp(20px,5vw,64px);background:#0E1013;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)">
+  <div style="max-width:1312px;margin:0 auto">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:#C8F542;margin-bottom:12px">04 / HORÁRIOS</div>
+    <h2 style="font-family:Anton,sans-serif;font-weight:400;font-size:clamp(32px,6vw,56px);line-height:1;margin:0 0 10px;text-transform:uppercase">Toda aula, <span style="color:rgba(245,246,242,.35)">câmera ligada</span></h2>
+    <p style="font-size:15px;color:rgba(245,246,242,.55);margin:0 0 36px">A transmissão entra no ar automaticamente no início de cada turma.</p>
+    <div id="hrows" style="display:grid;gap:0;border-top:1px solid rgba(255,255,255,.1)">
+      <div style="display:grid;grid-template-columns:240px 1fr auto;gap:24px;align-items:center;padding:22px 8px;border-bottom:1px solid rgba(255,255,255,.1)">
+        <div style="font-family:Anton,sans-serif;font-size:22px;letter-spacing:.03em">ADULTOS</div>
+        <div style="font-size:14.5px;color:rgba(245,246,242,.7);line-height:1.6">Seg–Qui · 6h · 7h · 9h30 · 12h · 15h30 · 18h30 (Fundamental) · 19h30 &nbsp;—&nbsp; Sex · 12h (NoGi) · 18h30 (Super Aula Gi e NoGi)</div>
+        <sc-if value="{{ aoVivo }}" hint-placeholder-val="{{ true }}"><div style="display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF3B30"><span style="width:7px;height:7px;border-radius:50%;background:#FF3B30;animation:pulse 1.6s infinite"></span>AGORA</div></sc-if>
+      </div>
+      <div style="display:grid;grid-template-columns:240px 1fr auto;gap:24px;align-items:center;padding:22px 8px;border-bottom:1px solid rgba(255,255,255,.1)">
+        <div style="font-family:Anton,sans-serif;font-size:22px;letter-spacing:.03em">KIDS</div>
+        <div style="font-size:14.5px;color:rgba(245,246,242,.7);line-height:1.6">Seg/Qua · 9h30 (3–5 anos) · 18h30 (6–9 anos) &nbsp;—&nbsp; Ter/Qui · 18h30 (9–12 anos) &nbsp;—&nbsp; Sex · 12h (NoGi) · 18h30</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:rgba(245,246,242,.4)">TATAME 2</div>
+      </div>
+      <div style="display:grid;grid-template-columns:240px 1fr auto;gap:24px;align-items:center;padding:22px 8px;border-bottom:1px solid rgba(255,255,255,.1)">
+        <div style="font-family:Anton,sans-serif;font-size:22px;letter-spacing:.03em">PERFORMANCE</div>
+        <div style="font-size:14.5px;color:rgba(245,246,242,.7);line-height:1.6">Ter/Qui · 10h30 (a partir da faixa azul) &nbsp;—&nbsp; NoGi Performance · Seg/Qua · 19h30</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:rgba(245,246,242,.4)">TATAME 1</div>
+      </div>
+      <div style="display:grid;grid-template-columns:240px 1fr auto;gap:24px;align-items:center;padding:22px 8px;border-bottom:1px solid rgba(255,255,255,.1)">
+        <div style="font-family:Anton,sans-serif;font-size:22px;letter-spacing:.03em">OPEN MAT</div>
+        <div style="font-size:14.5px;color:rgba(245,246,242,.7);line-height:1.6">Sábado · 10h — câmeras ligadas o treino inteiro, replay disponível até segunda</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:rgba(245,246,242,.4)">TATAME 1+2</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Sobre" style="border-top:1px solid rgba(255,255,255,.06);background:linear-gradient(to bottom,#0A0B0D,#0E1013)">
+  <div id="sobre-grid" style="max-width:1312px;margin:0 auto;padding:clamp(52px,8vw,80px) clamp(20px,5vw,64px);display:grid;grid-template-columns:420px 1fr;gap:64px;align-items:center">
+    <img src="https://ceconibjjcriciuma.com.br/wp-content/uploads/2025/04/TOPO_SOBRE.png" alt="Henrique Ceconi" style="width:100%;display:block;filter:drop-shadow(0 30px 60px rgba(0,0,0,.6))">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:#C8F542;margin-bottom:12px">CRICIÚMA · SC</div>
+      <h2 style="font-family:Anton,sans-serif;font-weight:400;font-size:clamp(30px,5.5vw,52px);line-height:1.04;margin:0 0 20px;text-transform:uppercase">Treine com o campeão mundial <span style="color:#C8F542">Henrique Ceconi</span></h2>
+      <p style="font-size:16px;line-height:1.7;color:rgba(245,246,242,.7);max-width:560px;margin:0 0 28px;text-wrap:pretty">Faixa-preta desde 2016, Henrique Ceconi voltou às raízes para fundar em Criciúma uma academia de alto padrão. Agora, com o Ceconi Live, a arquibancada é o mundo inteiro: pais acompanham os filhos, alunos revisam a técnica e ninguém perde um treino.</p>
+      <div style="display:flex;align-items:center;gap:14px">
+        <img src="https://ceconibjjcriciuma.com.br/wp-content/uploads/2025/04/fav-ceconi.png" alt="" style="height:34px">
+        <span style="font-family:Anton,sans-serif;font-size:22px;letter-spacing:.14em">BE A LION</span>
+        <img src="https://ceconibjjcriciuma.com.br/wp-content/uploads/2025/04/fav-ceconi.png" alt="" style="height:34px">
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer" style="border-top:1px solid rgba(255,255,255,.08);padding:clamp(36px,6vw,56px) clamp(20px,5vw,64px) 44px">
+  <div id="foot-main" style="max-width:1312px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:40px">
+    <div>
+      <img src="https://ceconibjjcriciuma.com.br/wp-content/uploads/2025/04/CeconiBJJ-branco.png" alt="Ceconi BJJ" style="height:34px;display:block;margin-bottom:18px">
+      <div style="font-size:13.5px;color:rgba(245,246,242,.55);line-height:1.7">R. Anita Garibaldi, 375 – Centro, Criciúma – SC<br>Anexo ao Combo Atacadista</div>
+    </div>
+    <div style="display:flex;gap:56px;font-size:13.5px">
+      <div style="display:grid;gap:10px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:rgba(245,246,242,.4)">PLATAFORMA</div>
+        <a href="#aovivo" style="color:rgba(245,246,242,.75)" style-hover="color:#C8F542">Ao vivo</a>
+        <a href="#replays" style="color:rgba(245,246,242,.75)" style-hover="color:#C8F542">Replays</a>
+        <a href="#cortes" style="color:rgba(245,246,242,.75)" style-hover="color:#C8F542">Cortes</a>
+      </div>
+      <div style="display:grid;gap:10px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:rgba(245,246,242,.4)">ACADEMIA</div>
+        <a href="#horarios" style="color:rgba(245,246,242,.75)" style-hover="color:#C8F542">Horários</a>
+        <a href="https://api.whatsapp.com/send/?phone=5548988144545&amp;text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+a+Ceconi+BJJ." target="_blank" style="color:rgba(245,246,242,.75)" style-hover="color:#C8F542">WhatsApp</a>
+      </div>
+    </div>
+    <a href="https://api.whatsapp.com/send/?phone=5548988144545&amp;text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+a+Ceconi+BJJ." target="_blank" style="background:#C8F542;color:#0A0B0D;font-weight:700;font-size:14px;letter-spacing:.04em;padding:14px 24px;border-radius:6px" style-hover="background:#FFFFFF;color:#0A0B0D">FALAR NO WHATSAPP</a>
+  </div>
+  <div id="foot-meta" style="max-width:1312px;margin:44px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:rgba(245,246,242,.35)">
+    <span>© 2026 CECONI BJJ · BE A LION</span>
+    <sc-if value="{{ poweredBy }}" hint-placeholder-val="{{ false }}"><span>TRANSMISSÃO POWERED BY <span style="color:#C8F542">MATCAST</span></span></sc-if>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;aoVivo&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Transmissão&quot;}, &quot;baseViewers&quot;: {&quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: 247, &quot;min&quot;: 0, &quot;max&quot;: 2000, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Transmissão&quot;}, &quot;poweredBy&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Marca&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { cam: 0, filter: 'Todas', sec: 1123, drift: 0, playing: true, muted: true };
+    this.mainRef = React.createRef();
+  }
+  playMain() {
+    const v = this.mainRef.current;
+    if (v) { v.muted = this.state.muted; v.play().then(() => this.setState({ playing: true })).catch(() => this.setState({ playing: false })); }
+  }
+  componentDidMount() {
+    this.playMain();
+    this.mainPoll = setInterval(() => {
+      const v = this.mainRef.current;
+      if (v && v.src && v.paused && this.state.playing) v.play().catch(() => {});
+    }, 800);
+    this.timer = setInterval(() => this.setState(s => ({
+      sec: s.sec + 1,
+      drift: Math.max(-30, Math.min(30, s.drift + (Math.random() < .35 ? (Math.random() < .5 ? 1 : -1) : 0)))
+    })), 1000);
+  }
+  componentWillUnmount() { clearInterval(this.timer); clearInterval(this.mainPoll); }
+  fmt(t) {
+    const h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60;
+    const p = n => String(n).padStart(2, '0');
+    return p(h) + ':' + p(m) + ':' + p(s);
+  }
+  renderVals() {
+    const A = 'uploads/assets-1787096787759-3cre.mp4';
+    const B = 'uploads/assets-1787096787846-ylk1.mp4';
+    const aoVivo = this.props.aoVivo ?? true;
+    const camDefs = [
+      { label: 'TATAME 1 · CAM A', src: A, live: true },
+      { label: 'TATAME 1 · CAM B', src: B, live: true },
+      { label: 'TATAME 2 · CAM A', live: false },
+      { label: 'TATAME 2 · CAM B', live: false }
+    ];
+    const cams = camDefs.map((c, i) => {
+      const active = i === this.state.cam;
+      const live = c.live && aoVivo;
+      return {
+        label: c.label, src: c.src, live: live, offline: !live,
+        bc: active ? '#C8F542' : 'rgba(255,255,255,.12)',
+        op: live ? 1 : .55,
+        cursor: live ? 'pointer' : 'default',
+        tag: live ? (active ? 'NO AR' : 'AO VIVO') : 'ÀS 18H30',
+        tagColor: live ? (active ? '#C8F542' : '#FF3B30') : 'rgba(245,246,242,.45)',
+        onClick: live ? () => this.setState({ cam: i }, () => this.playMain()) : () => {}
+      };
+    });
+    const cats = ['Todas', 'Fundamental', 'Avançado', 'NoGi', 'Kids', 'Open Mat'];
+    const chips = cats.map(name => {
+      const on = this.state.filter === name;
+      return {
+        name: name,
+        bg: on ? '#C8F542' : 'transparent',
+        color: on ? '#0A0B0D' : 'rgba(245,246,242,.7)',
+        hoverColor: on ? '#0A0B0D' : '#C8F542',
+        border: on ? '#C8F542' : 'rgba(255,255,255,.18)',
+        onClick: () => this.setState({ filter: name })
+      };
+    });
+    const allReps = [
+      { title: 'Aula Fundamental · Guarda fechada', meta: 'HOJE · 18H30 · PROF. HENRIQUE', cam: 'TATAME 1', dur: '58:12', cat: 'Fundamental', src: A + '#t=2' },
+      { title: 'Avançado · Passagem de guarda', meta: 'HOJE · 19H30 · PROF. HENRIQUE', cam: 'TATAME 1', dur: '1:02:47', cat: 'Avançado', src: B + '#t=1' },
+      { title: 'NoGi · Ataques de perna', meta: 'SEX · 12H · PROF. HENRIQUE', cam: 'TATAME 2', dur: '49:05', cat: 'NoGi', src: A + '#t=6' },
+      { title: 'Open Mat · Rolas livres', meta: 'SÁB · 10H · TODOS OS NÍVEIS', cam: 'TATAME 1+2', dur: '1:31:20', cat: 'Open Mat', src: B + '#t=4' },
+      { title: 'Kids 6–9 · Quedas e controle', meta: 'SEG · 18H30 · TURMA INFANTIL', cam: 'TATAME 2', dur: '41:33', cat: 'Kids', src: A + '#t=9' },
+      { title: 'Super Aula · Gi e NoGi', meta: 'SEX · 18H30 · AULA ABERTA', cam: 'TATAME 1', dur: '1:12:08', cat: 'NoGi', src: B + '#t=7' }
+    ];
+    const replays = this.state.filter === 'Todas' ? allReps : allReps.filter(r => r.cat === this.state.filter);
+    const active = camDefs[this.state.cam];
+    return {
+      aoVivo: aoVivo,
+      poweredBy: this.props.poweredBy ?? false,
+      liveBadge: aoVivo ? 'AO VIVO' : 'FORA DO AR',
+      liveDot: aoVivo ? '#FF3B30' : '#5A5F66',
+      liveTagBg: aoVivo ? '#FF3B30' : 'rgba(90,95,102,.9)',
+      liveTagColor: '#FFFFFF',
+      heroBadge: aoVivo ? 'AO VIVO AGORA · TATAME 1' : 'PRÓXIMA TRANSMISSÃO · 18H30',
+      timecode: this.fmt(this.state.sec),
+      viewersLabel: ((this.props.baseViewers ?? 247) + this.state.drift) + ' assistindo agora',
+      liveEdgeLabel: aoVivo ? '● AO VIVO — atraso de 4s' : 'transmissão encerrada',
+      cams: cams,
+      activeSrc: active.src || A,
+      activeLabel: active.label,
+      chips: chips,
+      replays: replays,
+      mainRef: this.mainRef,
+      playLabel: this.state.playing ? '❚❚ PAUSAR' : '▶ REPRODUZIR',
+      muteLabel: this.state.muted ? 'SOM OFF' : 'SOM ON',
+      togglePlay: () => {
+        const v = this.mainRef.current; if (!v) return;
+        if (v.paused) { v.play(); this.setState({ playing: true }); } else { v.pause(); this.setState({ playing: false }); }
+      },
+      toggleMute: () => {
+        const v = this.mainRef.current; if (!v) return;
+        v.muted = !v.muted; this.setState({ muted: v.muted });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

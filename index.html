@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#0A0B0D;color:#F5F6F2;font-family:Archivo,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#C8F542;text-decoration:none}a:hover{color:#FFFFFF}
+::selection{background:#C8F542;color:#0A0B0D}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
+@media (max-width:920px){
+#nav-links{display:none !important}
+#nav-demo{display:none !important}
+#hero-grid{grid-template-columns:1fr !important;gap:44px !important}
+#marca-grid{grid-template-columns:1fr !important;gap:36px !important}
+#case-grid{grid-template-columns:1fr !important;gap:36px !important}
+#foot-main{flex-direction:column !important;gap:12px !important;align-items:flex-start !important}
+}
+</style>
+</helmet>
+
+<div data-screen-label="MatCast" style="min-width:0">
+
+<nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:clamp(14px,3vw,32px);padding:0 clamp(14px,4vw,40px);height:64px;background:rgba(10,11,13,.78);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)">
+  <a href="#topo" style="display:flex;align-items:center;gap:8px;color:#F5F6F2">
+    <span style="width:10px;height:10px;background:#C8F542;border-radius:2px"></span>
+    <span style="font-family:Anton,sans-serif;font-size:21px;letter-spacing:.06em">MATCAST</span>
+  </a>
+  <div id="nav-links" style="display:flex;gap:26px;font-size:13.5px;font-weight:600;letter-spacing:.04em">
+    <a href="#como" style="color:rgba(245,246,242,.6)" style-hover="color:#C8F542">COMO FUNCIONA</a>
+    <a href="#recursos" style="color:rgba(245,246,242,.6)" style-hover="color:#C8F542">RECURSOS</a>
+    <a href="#marca" style="color:rgba(245,246,242,.6)" style-hover="color:#C8F542">SUA MARCA</a>
+    <a href="#case" style="color:rgba(245,246,242,.6)" style-hover="color:#C8F542">CASE</a>
+    <a href="#precos" style="color:rgba(245,246,242,.6)" style-hover="color:#C8F542">PREÇOS</a>
+  </div>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:14px">
+    <a id="nav-demo" href="ceconi.html" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:rgba(245,246,242,.6)" style-hover="color:#C8F542">VER DEMO AO VIVO ↗</a>
+    <a href="#cta" style="background:#C8F542;color:#0A0B0D;font-weight:700;font-size:13px;letter-spacing:.04em;padding:10px 18px;border-radius:6px" style-hover="background:#FFFFFF;color:#0A0B0D">AGENDAR DEMO</a>
+  </div>
+</nav>
+
+<header id="topo" data-screen-label="Hero" style="position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(80% 60% at 75% 30%,rgba(200,245,66,.08),transparent 60%)"></div>
+  <div id="hero-grid" style="position:relative;max-width:1312px;margin:0 auto;padding:clamp(52px,8vw,88px) clamp(20px,5vw,64px) clamp(56px,8vw,96px);display:grid;grid-template-columns:1fr 560px;gap:72px;align-items:center">
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid rgba(200,245,66,.35);border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;color:#C8F542;margin-bottom:28px">CÂMERAS + PLATAFORMA PARA ACADEMIAS DE BJJ</div>
+      <h1 style="font-family:Anton,sans-serif;font-weight:400;font-size:clamp(44px,9vw,84px);line-height:.96;letter-spacing:.005em;margin:0;text-transform:uppercase">Coloque seus tatames <span style="color:#C8F542">no ar.</span></h1>
+      <p style="font-size:18px;line-height:1.6;color:rgba(245,246,242,.75);max-width:520px;margin:26px 0 34px;text-wrap:pretty">Instalamos as câmeras, você ganha um hub com a sua marca: transmissão ao vivo, replay de todas as aulas e cortes prontos para o Instagram. Seus alunos assistem de qualquer lugar — incluso na mensalidade deles.</p>
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+        <a href="#cta" style="display:inline-flex;align-items:center;gap:10px;background:#C8F542;color:#0A0B0D;font-weight:700;font-size:15px;letter-spacing:.03em;padding:16px 28px;border-radius:6px" style-hover="background:#FFFFFF;color:#0A0B0D">AGENDAR DEMO</a>
+        <a href="ceconi.html" style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.25);color:#F5F6F2;font-weight:600;font-size:15px;letter-spacing:.03em;padding:15px 28px;border-radius:6px" style-hover="border:1px solid #C8F542;color:#C8F542">VER NO AR: CECONI BJJ ↗</a>
+      </div>
+      <div style="display:flex;gap:20px 36px;flex-wrap:wrap;margin-top:44px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:rgba(245,246,242,.55)">
+        <span><span style="color:#C8F542;font-weight:600">7 DIAS</span> DA VISITA AO AR</span>
+        <span><span style="color:#C8F542;font-weight:600">ZERO</span> OBRA NO TATAME</span>
+        <span><span style="color:#C8F542;font-weight:600">100%</span> SUA MARCA</span>
+      </div>
+    </div>
+    <div>
+      <div style="border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;background:#101216;box-shadow:0 40px 100px rgba(0,0,0,.55)">
+        <div style="display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.08);background:#14161A">
+          <span style="width:10px;height:10px;border-radius:50%;background:#3A3F46"></span>
+          <span style="width:10px;height:10px;border-radius:50%;background:#3A3F46"></span>
+          <span style="width:10px;height:10px;border-radius:50%;background:#3A3F46"></span>
+          <div style="margin-left:10px;flex:1;background:#0A0B0D;border:1px solid rgba(255,255,255,.08);border-radius:5px;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(245,246,242,.55)">suaacademia.com.br<span style="color:#C8F542">/aovivo</span></div>
+        </div>
+        <div style="position:relative;aspect-ratio:16/9;background:#000">
+          <video src="uploads/assets-1787096787759-3cre.mp4" autoPlay muted loop playsInline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+          <div style="position:absolute;top:12px;left:12px;display:flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;background:#FF3B30;color:#fff;padding:5px 9px;border-radius:4px;font-weight:600"><span style="width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse 1.6s infinite"></span>AO VIVO</div>
+          <div style="position:absolute;bottom:12px;left:12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:rgba(10,11,13,.7);border:1px solid rgba(255,255,255,.15);padding:5px 9px;border-radius:4px">TATAME 1 · CAM A</div>
+          <div style="position:absolute;bottom:12px;right:12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;background:rgba(10,11,13,.7);padding:5px 9px;border-radius:4px;color:#C8F542">183 assistindo</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px">
+          <div style="position:relative;aspect-ratio:16/9;border-radius:5px;overflow:hidden;border:1.5px solid #C8F542"><video src="uploads/assets-1787096787759-3cre.mp4" preload="metadata" muted playsInline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video></div>
+          <div style="position:relative;aspect-ratio:16/9;border-radius:5px;overflow:hidden;border:1px solid rgba(255,255,255,.12)"><video src="uploads/assets-1787096787846-ylk1.mp4#t=2" preload="metadata" muted playsInline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video></div>
+          <div style="position:relative;aspect-ratio:16/9;border-radius:5px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:repeating-linear-gradient(-45deg,#101216 0 8px,#15181D 8px 16px)"></div>
+          <div style="position:relative;aspect-ratio:16/9;border-radius:5px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:repeating-linear-gradient(-45deg,#101216 0 8px,#15181D 8px 16px)"></div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center;gap:8px;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:rgba(245,246,242,.45)">O HUB QUE SEUS ALUNOS ABREM TODO DIA</div>
+    </div>
+  </div>
+</header>
+
+<div style="border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);background:#0E1013">
+  <div style="max-width:1312px;margin:0 auto;padding:22px clamp(20px,5vw,64px);display:flex;align-items:center;gap:clamp(18px,4vw,40px);flex-wrap:wrap">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:rgba(245,246,242,.4);white-space:nowrap">NO AR COM MATCAST</span>
+    <img src="https://ceconibjjcriciuma.com.br/wp-content/uploads/2025/04/CeconiBJJ-branco.png" alt="Ceconi BJJ" style="height:26px;opacity:.9">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;color:rgba(245,246,242,.25);border:1px dashed rgba(255,255,255,.18);padding:8px 18px;border-radius:5px">SUA ACADEMIA</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;color:rgba(245,246,242,.25);border:1px dashed rgba(255,255,255,.18);padding:8px 18px;border-radius:5px">SUA ACADEMIA</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;color:rgba(245,246,242,.25);border:1px dashed rgba(255,255,255,.18);padding:8px 18px;border-radius:5px">SUA ACADEMIA</span>
+  </div>
+</div>
+
+<section id="como" data-screen-label="Como funciona" style="max-width:1312px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,5vw,64px) clamp(48px,7vw,90px);box-sizing:border-box">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:#C8F542;margin-bottom:12px">01 / COMO FUNCIONA</div>
+  <h2 style="font-family:Anton,sans-serif;font-weight:400;font-size:clamp(32px,6vw,56px);line-height:1;margin:0 0 44px;text-transform:uppercase">Da visita ao ar <span style="color:rgba(245,246,242,.35)">em 7 dias</span></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px">
+    <div style="border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:30px;background:#101216">
+      <div style="font-family:Anton,sans-serif;font-size:44px;color:#C8F542;margin-bottom:14px">01</div>
+      <div style="font-weight:700;font-size:18px;margin-bottom:10px">Instalamos as câmeras</div>
+      <p style="font-size:14.5px;line-height:1.65;color:rgba(245,246,242,.6);margin:0">De 2 a 6 câmeras fixas por tatame, sem obra e sem cabo aparente. Áudio ambiente opcional e gravação local de backup.</p>
+    </div>
+    <div style="border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:30px;background:#101216">
+      <div style="font-family:Anton,sans-serif;font-size:44px;color:#C8F542;margin-bottom:14px">02</div>
+      <div style="font-weight:700;font-size:18px;margin-bottom:10px">Ligamos o seu hub</div>
+      <p style="font-size:14.5px;line-height:1.65;color:rgba(245,246,242,.6);margin:0">Um site com o seu logo, suas cores e seu domínio. A transmissão liga sozinha no horário de cada turma do seu quadro.</p>
+    </div>
+    <div style="border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:30px;background:#101216">
+      <div style="font-family:Anton,sans-serif;font-size:44px;color:#C8F542;margin-bottom:14px">03</div>
+      <div style="font-weight:700;font-size:18px;margin-bottom:10px">Seus alunos entram</div>
+      <p style="font-size:14.5px;line-height:1.65;color:rgba(245,246,242,.6);margin:0">Acesso pela matrícula: ao vivo, replays de 30 dias e cortes. Pais acompanham as turmas kids do trabalho.</p>
+    </div>
+  </div>
+</section>
+
+<section id="recursos" data-screen-label="Recursos" style="background:#0E1013;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)">
+  <div style="max-width:1312px;margin:0 auto;padding:clamp(52px,8vw,90px) clamp(20px,5vw,64px)">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:#C8F542;margin-bottom:12px">02 / RECURSOS</div>
+    <h2 style="font-family:Anton,sans-serif;font-weight:400;font-size:clamp(32px,6vw,56px);line-height:1;margin:0 0 44px;text-transform:uppercase">Tudo que o tatame <span style="color:rgba(245,246,242,.35)">produz</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.09);border-radius:12px;overflow:hidden">
+      <sc-for list="{{ recursos }}" as="r" hint-placeholder-count="6">
+        <div style="background:#101216;padding:28px 26px" style-hover="background:#13161B">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#C8F542;margin-bottom:12px">{{ r.tag }}</div>
+          <div style="font-weight:700;font-size:17px;margin-bottom:8px">{{ r.titulo }}</div>
+          <p style="font-size:14px;line-height:1.6;color:rgba(245,246,242,.6);margin:0">{{ r.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="marca" data-screen-label="Sua marca" style="max-width:1312px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,5vw,64px);box-sizing:border-box">
+  <div id="marca-grid" style="display:grid;grid-template-columns:400px 1fr;gap:64px;align-items:center">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:#C8F542;margin-bottom:12px">03 / WHITE LABEL</div>
+      <h2 style="font-family:Anton,sans-serif;font-weight:400;font-size:clamp(32px,6vw,56px);line-height:1.02;margin:0 0 22px;text-transform:uppercase">Sua marca, <span style="color:rgba(245,246,242,.35)">não a nossa</span></h2>
+      <p style="font-size:16px;line-height:1.65;color:rgba(245,246,242,.7);margin:0 0 30px;text-wrap:pretty">O hub inteiro veste as cores da sua academia: logo, domínio, tipografia e paleta. O MatCast fica invisível — quem brilha é o seu tatame. Experimente:</p>
+      <div style="display:grid;gap:16px">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:rgba(245,246,242,.5);margin-bottom:8px">NOME DA ACADEMIA</div>
+          <input value="{{ brandName }}" onChange="{{ setBrandName }}" style="width:100%;box-sizing:border-box;background:#101216;border:1px solid rgba(255,255,255,.18);border-radius:6px;color:#F5F6F2;font-family:Archivo,sans-serif;font-size:15px;font-weight:600;padding:12px 14px;outline:none">
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:rgba(245,246,242,.5);margin-bottom:8px">COR DA MARCA</div>
+          <div style="display:flex;gap:10px">
+            <sc-for list="{{ swatches }}" as="sw" hint-placeholder-count="4">
+              <button onClick="{{ sw.onClick }}" style="width:38px;height:38px;border-radius:8px;background:{{ sw.color }};border:2px solid {{ sw.border }};cursor:pointer"></button>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;background:#101216;box-shadow:0 30px 80px rgba(0,0,0,.5)">
+      <div style="display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.08);background:#14161A">
+        <span style="width:10px;height:10px;border-radius:50%;background:#3A3F46"></span>
+        <span style="width:10px;height:10px;border-radius:50%;background:#3A3F46"></span>
+        <span style="width:10px;height:10px;border-radius:50%;background:#3A3F46"></span>
+        <div style="margin-left:10px;flex:1;background:#0A0B0D;border:1px solid rgba(255,255,255,.08);border-radius:5px;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(245,246,242,.55)">{{ brandDomain }}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:20px;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.08)">
+        <span style="font-family:Anton,sans-serif;font-size:17px;letter-spacing:.05em;text-transform:uppercase;color:{{ brandColor }}">{{ brandName }}</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:rgba(245,246,242,.55)">AO VIVO</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:rgba(245,246,242,.35)">REPLAYS</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:rgba(245,246,242,.35)">CORTES</span>
+        <span style="margin-left:auto;background:{{ brandColor }};color:#0A0B0D;font-weight:700;font-size:11px;letter-spacing:.05em;padding:7px 13px;border-radius:5px">ÁREA DO ALUNO</span>
+      </div>
+      <div style="position:relative;aspect-ratio:16/8;background:#000">
+        <video ref="{{ marcaRef }}" src="uploads/assets-1787096787846-ylk1.mp4" autoPlay muted loop playsInline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),transparent 50%)"></div>
+        <div style="position:absolute;top:12px;left:12px;display:flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;background:#FF3B30;color:#fff;padding:5px 9px;border-radius:4px;font-weight:600"><span style="width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse 1.6s infinite"></span>AO VIVO</div>
+        <div style="position:absolute;left:16px;bottom:14px;font-family:Anton,sans-serif;font-size:24px;letter-spacing:.03em;text-transform:uppercase">Treino das 19h30 · <span style="color:{{ brandColor }}">Tatame 1</span></div>
+        <div style="position:absolute;right:16px;bottom:14px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:{{ brandColor }};border:1px solid {{ brandColor }};padding:5px 9px;border-radius:4px;background:rgba(10,11,13,.6)">TROCAR CÂMERA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="case" data-screen-label="Case Ceconi" style="background:#0E1013;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)">
+  <div id="case-grid" style="max-width:1312px;margin:0 auto;padding:clamp(52px,8vw,90px) clamp(20px,5vw,64px);display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:#C8F542;margin-bottom:12px">04 / CASE · CRICIÚMA SC</div>
+      <img src="https://ceconibjjcriciuma.com.br/wp-content/uploads/2025/04/CeconiBJJ-branco.png" alt="Ceconi BJJ" style="height:44px;display:block;margin:6px 0 24px">
+      <p style="font-family:Anton,sans-serif;font-size:clamp(24px,4.5vw,34px);line-height:1.15;margin:0 0 24px;text-transform:uppercase;letter-spacing:.01em">"A arquibancada virou o mundo inteiro. Aluno que viaja não perde aula, <span style="color:#C8F542">pai assiste o filho do trabalho.</span>"</p>
+      <div style="font-size:14px;color:rgba(245,246,242,.6);margin-bottom:30px">Henrique Ceconi — Campeão Mundial, fundador da Ceconi BJJ</div>
+      <div style="display:flex;gap:36px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:rgba(245,246,242,.55);margin-bottom:34px">
+        <span><span style="color:#C8F542;font-weight:600">04</span> CÂMERAS</span>
+        <span><span style="color:#C8F542;font-weight:600">02</span> TATAMES</span>
+        <span><span style="color:#C8F542;font-weight:600">30D</span> DE REPLAY</span>
+      </div>
+      <a href="ceconi.html" style="display:inline-flex;align-items:center;gap:10px;background:#C8F542;color:#0A0B0D;font-weight:700;font-size:14px;letter-spacing:.04em;padding:14px 24px;border-radius:6px" style-hover="background:#FFFFFF;color:#0A0B0D">VER O HUB DA CECONI AO VIVO ↗</a>
+    </div>
+    <div style="position:relative;border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;aspect-ratio:4/5;background:#000">
+      <video src="uploads/assets-1787096787759-3cre.mp4#t=3" preload="metadata" muted playsInline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6),transparent 55%)"></div>
+      <div style="position:absolute;left:14px;bottom:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;background:rgba(10,11,13,.7);border:1px solid rgba(255,255,255,.15);padding:6px 10px;border-radius:4px">CECONI BJJ · TATAME 1 · CAM A</div>
+    </div>
+  </div>
+</section>
+
+<section id="precos" data-screen-label="Preços" style="max-width:1312px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(20px,5vw,64px);box-sizing:border-box">
+  <sc-if value="{{ mostrarPrecos }}" hint-placeholder-val="{{ true }}">
+    <div style="text-align:center;margin-bottom:44px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:#C8F542;margin-bottom:12px">05 / PLANOS</div>
+      <h2 style="font-family:Anton,sans-serif;font-weight:400;font-size:clamp(32px,6vw,56px);line-height:1;margin:0 0 14px;text-transform:uppercase">Um plano por tatame</h2>
+      <p style="font-size:15px;color:rgba(245,246,242,.55);margin:0">Instalação inclusa em contratos anuais. Sem taxa por aluno.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px 18px;max-width:1080px;margin:0 auto">
+      <sc-for list="{{ planos }}" as="p" hint-placeholder-count="3">
+        <div style="position:relative;border:1px solid {{ p.bc }};border-radius:12px;padding:34px 30px;background:{{ p.bg }};display:flex;flex-direction:column">
+          <sc-if value="{{ p.tag }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;top:-12px;left:30px;background:#C8F542;color:#0A0B0D;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;padding:5px 10px;border-radius:4px">{{ p.tag }}</div>
+          </sc-if>
+          <div style="font-family:Anton,sans-serif;font-size:26px;letter-spacing:.02em;text-transform:uppercase;margin-bottom:4px">{{ p.nome }}</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:rgba(245,246,242,.45);margin-bottom:10px">{{ p.spec }}</div>
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:16px"><span style="font-family:Anton,sans-serif;font-size:48px;color:#C8F542">{{ p.preco }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:rgba(245,246,242,.5)">{{ p.per }}</span></div>
+          <div style="display:grid;gap:9px;font-size:13.5px;color:rgba(245,246,242,.7);margin-bottom:26px">
+            <sc-for list="{{ p.itens }}" as="it" hint-placeholder-count="4">
+              <div style="display:flex;gap:10px;align-items:baseline"><span style="color:#C8F542;font-family:'IBM Plex Mono',monospace;font-size:11px">✓</span> {{ it }}</div>
+            </sc-for>
+          </div>
+          <a href="#cta" style="margin-top:auto;text-align:center;background:{{ p.ctaBg }};color:{{ p.ctaColor }};border:1px solid {{ p.ctaBorder }};font-weight:700;font-size:14px;letter-spacing:.04em;padding:13px;border-radius:6px" style-hover="background:#FFFFFF;color:#0A0B0D;border:1px solid #FFFFFF">{{ p.cta }}</a>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+</section>
+
+<section id="cta" data-screen-label="CTA final" style="border-top:1px solid rgba(255,255,255,.07);background:radial-gradient(70% 90% at 50% 0%,rgba(200,245,66,.09),transparent 65%)">
+  <div style="max-width:800px;margin:0 auto;padding:clamp(56px,9vw,100px) clamp(20px,5vw,64px);text-align:center">
+    <h2 style="font-family:Anton,sans-serif;font-weight:400;font-size:clamp(36px,7vw,64px);line-height:1;margin:0 0 18px;text-transform:uppercase">Seu tatame merece <span style="color:#C8F542">plateia.</span></h2>
+    <p style="font-size:16px;line-height:1.6;color:rgba(245,246,242,.65);margin:0 0 34px">Demo de 20 minutos, direto do hub da Ceconi BJJ ao vivo. Sem compromisso.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="#topo" style="background:#C8F542;color:#0A0B0D;font-weight:700;font-size:15px;letter-spacing:.03em;padding:16px 30px;border-radius:6px" style-hover="background:#FFFFFF;color:#0A0B0D">AGENDAR DEMO</a>
+      <a href="ceconi.html" style="border:1px solid rgba(255,255,255,.25);color:#F5F6F2;font-weight:600;font-size:15px;letter-spacing:.03em;padding:15px 30px;border-radius:6px" style-hover="border:1px solid #C8F542;color:#C8F542">VER DEMO AO VIVO ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer" style="border-top:1px solid rgba(255,255,255,.08);padding:44px clamp(20px,5vw,64px)">
+  <div id="foot-main" style="max-width:1312px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:rgba(245,246,242,.35)">
+    <span style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;background:#C8F542;border-radius:2px"></span><span style="font-family:Anton,sans-serif;font-size:15px;letter-spacing:.06em;color:rgba(245,246,242,.7)">MATCAST</span></span>
+    <span>CÂMERAS + PLATAFORMA PARA ACADEMIAS DE BJJ · BRASIL</span>
+    <span>© 2026 MATCAST</span>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mostrarPrecos&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Página&quot;}}">
+class Component extends DCLogic {
+  state = { brandName: 'Sua Academia BJJ', brandColor: '#C8F542' };
+  constructor(props) { super(props); this.marcaRef = React.createRef(); }
+  componentDidMount() {
+    this.watchdog = setInterval(() => {
+      const v = this.marcaRef.current;
+      if (v && v.paused) { v.muted = true; v.play().catch(() => {}); }
+    }, 800);
+  }
+  componentWillUnmount() { clearInterval(this.watchdog); }
+  renderVals() {
+    const colors = ['#C8F542', '#FF4D3D', '#3D8BFF', '#F2B33D'];
+    const slug = this.state.brandName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '').slice(0, 22) || 'suaacademia';
+    return {
+      marcaRef: this.marcaRef,
+      mostrarPrecos: this.props.mostrarPrecos ?? true,
+      brandName: this.state.brandName,
+      brandColor: this.state.brandColor,
+      brandDomain: slug + '.com.br/aovivo',
+      setBrandName: (e) => this.setState({ brandName: e.target.value }),
+      swatches: colors.map(c => ({
+        color: c,
+        border: this.state.brandColor === c ? '#FFFFFF' : 'rgba(255,255,255,.15)',
+        onClick: () => this.setState({ brandColor: c })
+      })),
+      recursos: [
+        { tag: 'AO VIVO', titulo: 'Multicâmera em um clique', desc: 'Até 6 ângulos por academia. O aluno troca de câmera como num evento de UFC.' },
+        { tag: 'REPLAY', titulo: '30 dias de gravações', desc: 'Toda aula gravada e organizada por turma, professor e tatame. Busca por data.' },
+        { tag: 'CORTES', titulo: 'Highlights em segundos', desc: 'O aluno marca início e fim e baixa o corte vertical, pronto para o Instagram.' },
+        { tag: 'ACESSO', titulo: 'Login pela matrícula', desc: 'Integra com seu sistema de gestão. Aluno inadimplente perde o acesso sozinho.' },
+        { tag: 'AGENDA', titulo: 'Liga sozinho no horário', desc: 'A transmissão segue seu quadro de horários. Ninguém precisa apertar gravar.' },
+        { tag: 'DADOS', titulo: 'Audiência por turma', desc: 'Veja quais horários engajam, quantos pais assistem kids e o replay mais visto.' }
+      ],
+      planos: [
+        { nome: 'Essencial', spec: '1 TATAME · 2 CÂMERAS', preco: 'R$490', per: '/mês', itens: ['Ao vivo + replays 30 dias', 'Hub com sua marca', 'Acesso por matrícula', 'Suporte em horário comercial'], bc: 'rgba(255,255,255,.12)', bg: '#101216', tag: false, cta: 'COMEÇAR', ctaBg: 'transparent', ctaColor: '#F5F6F2', ctaBorder: 'rgba(255,255,255,.25)' },
+        { nome: 'Pro', spec: '2 TATAMES · 4 CÂMERAS', preco: 'R$890', per: '/mês', itens: ['Tudo do Essencial', 'Cortes ilimitados', 'Domínio próprio', 'Analytics de audiência'], bc: 'rgba(200,245,66,.6)', bg: 'linear-gradient(180deg,rgba(200,245,66,.07),#101216)', tag: 'MAIS ESCOLHIDO', cta: 'COMEÇAR', ctaBg: '#C8F542', ctaColor: '#0A0B0D', ctaBorder: '#C8F542' },
+        { nome: 'Elite', spec: 'CÂMERAS ILIMITADAS', preco: 'Custom', per: '', itens: ['Tudo do Pro', 'Transmissão de campeonatos', 'Múltiplas unidades', 'Gerente de conta dedicado'], bc: 'rgba(255,255,255,.12)', bg: '#101216', tag: false, cta: 'FALAR COM VENDAS', ctaBg: 'transparent', ctaColor: '#F5F6F2', ctaBorder: 'rgba(255,255,255,.25)' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
