@@ -16,10 +16,9 @@ export function MarketingNav() {
         {links.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
       </div>
       <div className="nav-actions">
-        <a className="nav-demo" href="/ceconi.html">VER DEMO AO VIVO ↗</a>
+        <a className="nav-demo" href="/ceconi">VER DEMO AO VIVO ↗</a>
         <PrimaryLink href="#cta">AGENDAR DEMO</PrimaryLink>
       </div>
     </nav>
   );
 }
-

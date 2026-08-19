@@ -37,7 +37,7 @@ export function MarketingHero() {
         <p>Instalamos as câmeras e você ganha um hub com a sua marca: transmissão ao vivo, replay de todas as aulas e cortes prontos para o Instagram.</p>
         <div className="button-row">
           <PrimaryLink href="#cta">AGENDAR DEMO</PrimaryLink>
-          <SecondaryLink href="/ceconi.html">VER NO AR: CECONI BJJ ↗</SecondaryLink>
+          <SecondaryLink href="/ceconi">VER NO AR: CECONI BJJ ↗</SecondaryLink>
         </div>
         <div className="hero-facts"><span><b>7 DIAS</b> DA VISITA AO AR</span><span><b>ZERO</b> OBRA NO TATAME</span><span><b>100%</b> SUA MARCA</span></div>
       </div>
@@ -105,7 +105,7 @@ export function BrandDemo() {
 export function CaseStudy() {
   return (
     <section id="case" className="section-tinted"><div className="section-shell content-section case-grid">
-      <div><div className="eyebrow">04 / CASE · CRICIÚMA SC</div><CeconiLogo className="case-logo" /><blockquote>“A arquibancada virou o mundo inteiro. Aluno que viaja não perde aula, <em>pai assiste o filho do trabalho.</em>”</blockquote><p>Henrique Ceconi — Campeão Mundial, fundador da Ceconi BJJ</p><div className="hero-facts"><span><b>01</b> CÂMERA IP</span><span><b>02</b> TATAMES</span><span><b>30D</b> DE REPLAY</span></div><PrimaryLink href="/ceconi.html">VER O HUB DA CECONI AO VIVO ↗</PrimaryLink></div>
+      <div><div className="eyebrow">04 / CASE · CRICIÚMA SC</div><CeconiLogo className="case-logo" /><blockquote>“A arquibancada virou o mundo inteiro. Aluno que viaja não perde aula, <em>pai assiste o filho do trabalho.</em>”</blockquote><p>Henrique Ceconi — Campeão Mundial, fundador da Ceconi BJJ</p><div className="hero-facts"><span><b>01</b> CÂMERA IP</span><span><b>02</b> TATAMES</span><span><b>30D</b> DE REPLAY</span></div><PrimaryLink href="/ceconi">VER O HUB DA CECONI AO VIVO ↗</PrimaryLink></div>
       <div className="portrait-video"><video src={`${DEMO_A}#t=3`} muted playsInline /><span>CECONI BJJ · TATAME 1 · CAM A</span></div>
     </div></section>
   );

@@ -1,9 +1,11 @@
 import { build } from 'esbuild';
-import { cpSync, mkdirSync, writeFileSync } from 'node:fs';
+import { cpSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const ROOT = import.meta.dirname;
 const DIST = join(ROOT, 'dist');
+
+rmSync(DIST, { recursive: true, force: true });
 
 await build({
   absWorkingDir: ROOT,
@@ -24,6 +26,7 @@ await build({
 });
 
 mkdirSync(DIST, { recursive: true });
+mkdirSync(join(DIST, 'ceconi'), { recursive: true });
 cpSync(join(ROOT, 'uploads'), join(DIST, 'uploads'), { recursive: true });
 
 function pageHtml({ title, description, entry }) {
@@ -49,7 +52,7 @@ writeFileSync(join(DIST, 'index.html'), pageHtml({
   entry: 'index'
 }));
 
-writeFileSync(join(DIST, 'ceconi.html'), pageHtml({
+writeFileSync(join(DIST, 'ceconi', 'index.html'), pageHtml({
   title: 'Ceconi Live · O tatame nunca fecha',
   description: 'Ceconi Live — transmissão ao vivo, replays e cortes do tatame.',
   entry: 'ceconi'

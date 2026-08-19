@@ -290,6 +290,7 @@ const server = createHttpServer((request, response) => {
   }
 
   if (pathname === '/') pathname = '/index.html';
+  if (pathname === '/ceconi' || pathname === '/ceconi/') pathname = '/ceconi/index.html';
   if (pathname.split('/').some(part => part.startsWith('.'))) {
     sendJson(response, 404, { error: 'Arquivo nao encontrado' });
     return;

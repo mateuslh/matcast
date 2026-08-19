@@ -1,12 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/ceconi",
-      "destination": "/ceconi.html"
+      "source": "/ceconi.html",
+      "destination": "/ceconi",
+      "permanent": true
     }
   ]
 }
